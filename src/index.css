@@ -1,0 +1,8 @@
+@import url(reset.css);
+body {
+  max-width: 353px;
+  margin: 0 auto;
+  background-image: linear-gradient(180deg, #62b8f6 0%, #2c79c1 77.96%);
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}

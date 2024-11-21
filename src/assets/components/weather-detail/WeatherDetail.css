@@ -1,0 +1,13 @@
+.weather-details {
+  border-top: 1px solid #ffffff;
+  padding: 17px 22px 0;
+  /* 16px */
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper:not(:last-child) {
+  margin-bottom: 24px;
+}
