@@ -1,0 +1,33 @@
+.detail-info {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.detail-info__unit {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: -0.24px;
+  color: #ffffff;
+}
+
+.detail-info__condition {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: -0.24px;
+  color: #ffffff;
+}
+
+.detail-info__text {
+  margin-left: 11.5px;
+}
+
+.detail-info__indicator {
+  height: 24px;
+}
