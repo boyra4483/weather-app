@@ -7,12 +7,15 @@ export default function LocationItem({
   feelsLike,
   indicator,
   weatherCondition,
+  weatherData,
 }) {
   const navigate = useNavigate();
-
   return (
     <li
-      onClick={() => navigate(-1)}
+      onClick={() => {
+        localStorage.setItem("weather", JSON.stringify(weatherData));
+        return navigate(-1);
+      }}
       className={classes["weather-card"]}
       style={{
         textDecoration: "none",
