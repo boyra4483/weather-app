@@ -2,12 +2,12 @@ import LocationItem from "../location-item/LocationItem";
 import classes from "./LocationTable.module.css";
 
 const indicators = {
-  clear: "src/assets/img/icons/clear.svg",
-  clouds: "src/assets/img/icons/clouds.svg",
-  drizzle: "src/assets/img/icons/drizzle.svg",
-  rain: "src/assets/img/icons/rain.svg",
-  snow: "src/assets/img/icons/snow.svg",
-  thunderstorm: "src/assets/img/icons/thunderstorm.svg",
+  clear: "src/assets/img/icons/forecast-indicators/clear.svg",
+  clouds: "src/assets/img/icons/forecast-indicators/clouds.svg",
+  drizzle: "src/assets/img/icons/forecast-indicators/drizzle.svg",
+  rain: "src/assets/img/icons/forecast-indicators/rain.svg",
+  snow: "src/assets/img/icons/forecast-indicators/snow.svg",
+  thunderstorm: "src/assets/img/icons/forecast-indicators/thunderstorm.svg",
 };
 
 export default function LocationTable({ cities, inputText }) {
@@ -52,6 +52,7 @@ function getLocationItems(cities, inputText) {
           feelsLike={weather.main.feels_like}
           indicator={getIndicator(weather)}
           weatherCondition={weather.weather[0].description}
+          weatherData={weather}
         />
       );
     } else {
