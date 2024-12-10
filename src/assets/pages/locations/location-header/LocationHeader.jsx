@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import classes from "./LocationHeader.module.css";
 
 export default function LocationHeader({
@@ -6,13 +6,20 @@ export default function LocationHeader({
   onInputTextChange,
   onSubmit,
 }) {
+  const navigate = useNavigate();
   return (
     <>
       <section className={classes["navigation"]}>
         <div className={classes["wrapper"]}>
-          <Link to="/" className={classes["navigation__icon"]}>
-            <img src="src/assets/img/icons/arrow-left.svg" alt="arrow-left" />
-          </Link>
+          <div
+            onClick={() => navigate("/")}
+            className={classes["navigation__icon"]}
+          >
+            <img
+              src="src/assets/img/icons/common-icons/arrow-left.svg"
+              alt="arrow-left"
+            />
+          </div>
           <h1 className={classes["navigation__title"]}>Manage location</h1>
         </div>
 
