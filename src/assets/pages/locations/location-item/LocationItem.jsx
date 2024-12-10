@@ -10,11 +10,14 @@ export default function LocationItem({
   weatherData,
 }) {
   const navigate = useNavigate();
+
   return (
     <li
       onClick={() => {
+        localStorage.clear();
         localStorage.setItem("weather", JSON.stringify(weatherData));
-        return navigate(-1);
+
+        return navigate("/");
       }}
       className={classes["weather-card"]}
       style={{
