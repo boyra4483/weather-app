@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import classes from "./App.module.css";
-
 import LocationPage from "./assets/pages/locations/LocationPage";
+
 import NotFoundPage from "./assets/not-found-page/NotFoundPage";
+import NoLocations from "./assets/components/weather/no-locations/NoLocations";
 
 import Weather from "./assets/components/weather/Weather";
 import { loader as locationLoader } from "./assets/pages/locations/location-loader/locationLoader";
@@ -18,6 +18,10 @@ const router = createBrowserRouter(
       path: "/locations",
       element: <LocationPage />,
       loader: locationLoader,
+    },
+    {
+      path: "/no-locations",
+      element: <NoLocations />,
     },
   ],
   {
