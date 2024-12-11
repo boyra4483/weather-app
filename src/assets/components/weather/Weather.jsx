@@ -1,16 +1,26 @@
 import WeatherHeader from "../weather-header/WeatherHeader";
+import { getIndicator } from "../../storage/storage";
+
+import NoLocations from "./no-locations/NoLocations";
 import WeatherContent from "../weather-сontent/WeatherContent";
 
 import WeatherDetail from "../weather-detail/WeatherDetail";
 import classes from "./Weather.module.css";
 
 export default function Weather() {
-  console.log(getWeatherData());
+  if (!localStorage.length) return <NoLocations />;
+  const weather = getWeatherData();
+
   return (
     <section className={classes["weather"]}>
-      <WeatherHeader />
-      <WeatherContent />
-      <WeatherDetail />
+      <WeatherHeader cityName={weather.name} />
+      <WeatherContent
+        weatherImg={getIndicator(weather)}
+        alt={"forecast-icon"}
+        date={weather.date}
+        weatherForecast={weather}
+      />
+      <WeatherDetail weather={weather} />
     </section>
   );
 }
@@ -18,7 +28,7 @@ export default function Weather() {
 function getWeatherData() {
   const weather = JSON.parse(localStorage.getItem("weather"));
   const date = Date.now();
-  console.log(weather);
+
   const formatedDate = new Intl.DateTimeFormat(undefined, {
     weekday: "long",
     year: "numeric",
@@ -26,13 +36,14 @@ function getWeatherData() {
     day: "numeric",
   }).format(date);
   const weatherData = {
+    shortForecast: weather.weather[0].main.toLowerCase(),
     name: weather.name,
     temp: weather.main.temp,
     forecast: weather.weather[0].description,
     wind: {
-      speed: `${weather.wind.speed}km/h`,
+      speed: `${weather.wind.speed} km/h`,
     },
-    pressure: `${weather.main.pressure}mbar`,
+    pressure: `${weather.main.pressure} mbar`,
     feelsLike: weather.main.feels_like,
     humadity: `${weather.main.humidity}%`,
     date: {

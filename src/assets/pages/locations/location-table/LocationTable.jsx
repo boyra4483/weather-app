@@ -1,14 +1,8 @@
 import LocationItem from "../location-item/LocationItem";
-import classes from "./LocationTable.module.css";
+import { getIndicator } from "../../../storage/storage";
 
-const indicators = {
-  clear: "src/assets/img/icons/forecast-indicators/clear.svg",
-  clouds: "src/assets/img/icons/forecast-indicators/clouds.svg",
-  drizzle: "src/assets/img/icons/forecast-indicators/drizzle.svg",
-  rain: "src/assets/img/icons/forecast-indicators/rain.svg",
-  snow: "src/assets/img/icons/forecast-indicators/snow.svg",
-  thunderstorm: "src/assets/img/icons/forecast-indicators/thunderstorm.svg",
-};
+import { indicators } from "../../../storage/storage";
+import classes from "./LocationTable.module.css";
 
 export default function LocationTable({ cities, inputText }) {
   if (!Object.keys(cities).length)
@@ -60,6 +54,3 @@ function getLocationItems(cities, inputText) {
     }
   });
 }
-
-const getIndicator = (weather) =>
-  indicators[weather.weather[0].main.toLowerCase()];

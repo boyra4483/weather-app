@@ -7,8 +7,6 @@ import LocationHeader from "./location-header/LocationHeader";
 import classes from "./locationPage.module.css";
 
 export default function LocationPage() {
-  localStorage.clear();
-
   const [inputText, setInputText] = useState("");
   const [cities, setCities] = useState({});
 
