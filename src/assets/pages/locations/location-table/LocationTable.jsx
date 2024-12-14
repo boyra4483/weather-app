@@ -1,7 +1,6 @@
 import LocationItem from "../location-item/LocationItem";
 import { getIndicator } from "../../../storage/storage";
 
-import { indicators } from "../../../storage/storage";
 import classes from "./LocationTable.module.css";
 
 export default function LocationTable({ cities, inputText }) {

@@ -10,7 +10,6 @@ import classes from "./Weather.module.css";
 export default function Weather() {
   if (!localStorage.length) return <NoLocations />;
   const weather = getWeatherData();
-
   return (
     <section className={classes["weather"]}>
       <WeatherHeader cityName={weather.name} />
@@ -26,7 +25,9 @@ export default function Weather() {
 }
 
 function getWeatherData() {
-  const weather = JSON.parse(localStorage.getItem("weather"));
+  const weather = Object.values(
+    JSON.parse(localStorage.getItem("weatherData"))
+  ).at(-1);
   const date = Date.now();
 
   const formatedDate = new Intl.DateTimeFormat(undefined, {

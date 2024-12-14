@@ -13,16 +13,10 @@ export default function LocationItem({
 
   return (
     <li
-      onClick={() => {
-        localStorage.clear();
-        localStorage.setItem("weather", JSON.stringify(weatherData));
-
-        return navigate("/");
-      }}
+      onClick={() => navigate("/")}
       className={classes["weather-card"]}
       style={{
         textDecoration: "none",
-        marginBottom: "16px",
         cursor: "pointer",
       }}
     >
