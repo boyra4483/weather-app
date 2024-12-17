@@ -1,6 +1,6 @@
 import LocationItem from "../location-item/LocationItem";
-import { getIndicator } from "../../../storage/storage";
 
+import { getIndicator } from "../../../storage/storage";
 import classes from "./LocationTable.module.css";
 
 export default function LocationTable({ cities, inputText }) {
@@ -12,8 +12,8 @@ export default function LocationTable({ cities, inputText }) {
       </div>
     );
 
-  const sortedCities = GetSortedCities(cities);
-  const locationItems = getLocationItems(sortedCities, inputText);
+  const formatedCities = GetFormatedCities(cities);
+  const locationItems = getLocationItems(formatedCities, inputText);
 
   return (
     <section className={classes["location-table"]}>
@@ -22,8 +22,8 @@ export default function LocationTable({ cities, inputText }) {
   );
 }
 
-function GetSortedCities(cities) {
-  return Object.values(
+function GetFormatedCities(cities) {
+  return Object.entries(
     Object.entries(cities).reduce(
       (cities, [cityName, weather]) => ({
         ...cities,
@@ -35,12 +35,12 @@ function GetSortedCities(cities) {
 }
 
 function getLocationItems(cities, inputText) {
-  return cities.map((weather) => {
-    if (weather.name.toLowerCase().includes(inputText.toLowerCase())) {
+  return cities.map(([cityName, weather]) => {
+    if (cityName.includes(inputText.toLowerCase())) {
       return (
         <LocationItem
           key={weather.id}
-          cityName={weather.name}
+          cityName={cityName}
           temp={weather.main.temp}
           feelsLike={weather.main.feels_like}
           indicator={getIndicator(weather)}

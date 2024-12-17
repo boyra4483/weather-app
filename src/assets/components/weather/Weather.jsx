@@ -1,3 +1,8 @@
+import { useLoaderData } from "react-router-dom";
+
+import { useState } from "react";
+import { getLocalStorage } from "../../storage/storage";
+
 import WeatherHeader from "../weather-header/WeatherHeader";
 import { getIndicator } from "../../storage/storage";
 
@@ -8,8 +13,11 @@ import WeatherDetail from "../weather-detail/WeatherDetail";
 import classes from "./Weather.module.css";
 
 export default function Weather() {
-  if (!localStorage.length) return <NoLocations />;
-  const weather = getWeatherData();
+  if (!Object.values(getLocalStorage()).length) return <NoLocations />;
+  const [nextWeather, setNextWeather] = useState(getLocalStorage());
+  const cityName = useLoaderData();
+
+  const weather = getWeatherData(cityName);
   return (
     <section className={classes["weather"]}>
       <WeatherHeader cityName={weather.name} />
@@ -24,10 +32,8 @@ export default function Weather() {
   );
 }
 
-function getWeatherData() {
-  const weather = Object.values(
-    JSON.parse(localStorage.getItem("weatherData"))
-  ).at(-1);
+function getWeatherData(cityName) {
+  const { [cityName]: weather } = getCurrentWeatherData(cityName);
   const date = Date.now();
 
   const formatedDate = new Intl.DateTimeFormat(undefined, {
@@ -38,7 +44,7 @@ function getWeatherData() {
   }).format(date);
   const weatherData = {
     shortForecast: weather.weather[0].main.toLowerCase(),
-    name: weather.name,
+    name: cityName,
     temp: weather.main.temp,
     forecast: weather.weather[0].description,
     wind: {
@@ -57,4 +63,12 @@ function getWeatherData() {
   };
 
   return weatherData;
+}
+
+function getCurrentWeatherData(currentCity) {
+  const weatherData = getLocalStorage();
+  const currentCityName = Object.keys(weatherData).find(
+    (cityName) => cityName.toLowerCase() == currentCity.toLowerCase()
+  );
+  return { [currentCity]: weatherData[currentCityName] };
 }

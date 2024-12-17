@@ -1,7 +1,7 @@
 import getWeather from "../../../api/api";
 import { setLocalStorage } from "../../../storage/storage";
 
-export async function loader({ request }) {
+export default async function loader({ request }) {
   if (!localStorage.length) {
     localStorage.setItem("weatherData", JSON.stringify({}));
     return JSON.parse(localStorage.getItem("weatherData"));
@@ -17,6 +17,6 @@ export async function loader({ request }) {
 }
 
 function getUrlTitle(requsetUrl) {
-  const url = new URLSearchParams(requsetUrl);
-  return url.values().next().value;
+  const url = new URL(requsetUrl);
+  return url.searchParams.get("title");
 }

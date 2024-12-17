@@ -13,7 +13,6 @@ export default function LocationPage() {
   function handleInputTextChange(inputText) {
     setInputText(inputText);
   }
-
   return (
     <div className={classes["location"]}>
       <LocationHeader

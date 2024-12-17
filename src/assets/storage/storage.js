@@ -38,3 +38,6 @@ export const setLocalStorage = (nameCity, data) =>
       [nameCity]: data,
     })
   );
+
+export const getLocalStorage = () =>
+  JSON.parse(localStorage.getItem("weatherData"));
