@@ -11,7 +11,7 @@ export default function LocationHeader({ inputText, onInputTextChange }) {
         <div className={classes["wrapper"]}>
           <div
             style={{ cursor: "pointer" }}
-            onClick={() => navigate("/")}
+            onClick={() => navigate(-1)}
             className={classes["navigation__icon"]}
           >
             <img

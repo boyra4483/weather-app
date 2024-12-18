@@ -13,7 +13,9 @@ import WeatherDetail from "../weather-detail/WeatherDetail";
 import classes from "./Weather.module.css";
 
 export default function Weather() {
-  if (!Object.values(getLocalStorage()).length) return <NoLocations />;
+  if (!Object.values(getLocalStorage()).length || !useLoaderData())
+    return <NoLocations />;
+
   const [nextWeather, setNextWeather] = useState(getLocalStorage());
   const cityName = useLoaderData();
 
