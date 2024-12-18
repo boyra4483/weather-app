@@ -1,19 +1,14 @@
 import getWeather from "../../../api/api";
-import { setLocalStorage } from "../../../storage/storage";
+import { getLocalStorage, setLocalStorage } from "../../../storage/storage";
 
 export default async function loader({ request }) {
-  if (!localStorage.length) {
-    localStorage.setItem("weatherData", JSON.stringify({}));
-    return JSON.parse(localStorage.getItem("weatherData"));
-  }
-  if (!getUrlTitle(request.url))
-    return JSON.parse(localStorage.getItem("weatherData"));
+  if (!getUrlTitle(request.url)) return getLocalStorage();
 
   const title = getUrlTitle(request.url);
   const weather = await getWeather(title);
 
   setLocalStorage(title, weather);
-  return JSON.parse(localStorage.getItem("weatherData"));
+  return getLocalStorage();
 }
 
 function getUrlTitle(requsetUrl) {
