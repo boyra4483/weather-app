@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+
 import classes from "./LocationItem.module.css";
+import { setCityName } from "../../../storage/storage";
 
 export default function LocationItem({
   cityName,
@@ -11,6 +13,7 @@ export default function LocationItem({
   return (
     <li>
       <Link
+        onClick={() => setCityName(cityName)}
         to={{
           pathname: "/",
           search: `title=${cityName}`,

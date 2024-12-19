@@ -41,3 +41,27 @@ export const setLocalStorage = (nameCity, data) =>
 
 export const getLocalStorage = () =>
   JSON.parse(localStorage.getItem("weatherData"));
+
+export const setCityName = (name) => {
+  const weatherData = JSON.parse(localStorage.getItem("additionalWeatherData"));
+  if (weatherData.length < 4) {
+    return localStorage.setItem(
+      "additionalWeatherData",
+      JSON.stringify(Array.from(new Set([...weatherData, name])))
+    );
+  }
+  let counter = +weatherData[0];
+  if (!weatherData.includes(name)) {
+    weatherData.splice(counter, 1, name);
+    counter++;
+  }
+
+  counter = counter == 4 ? (weatherData[0] = 1) : (weatherData[0] = counter);
+  localStorage.setItem(
+    "additionalWeatherData",
+    JSON.stringify(Array.from(new Set([...weatherData, name])))
+  );
+};
+
+export const getCityNames = () =>
+  JSON.parse(localStorage.getItem("additionalWeatherData"));
