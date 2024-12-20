@@ -1,6 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-
-import { useState } from "react";
 import { getLocalStorage } from "../../storage/storage";
 
 import WeatherHeader from "../weather-header/WeatherHeader";
@@ -16,10 +14,9 @@ export default function Weather() {
   if (!Object.values(getLocalStorage()).length || !useLoaderData())
     return <NoLocations />;
 
-  const [nextWeather, setNextWeather] = useState(getLocalStorage());
   const cityName = useLoaderData();
-
   const weather = getWeatherData(cityName);
+
   return (
     <section className={classes["weather"]}>
       <WeatherHeader cityName={weather.name} />
