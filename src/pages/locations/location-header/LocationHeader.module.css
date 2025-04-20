@@ -1,0 +1,60 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 27px;
+}
+
+.navigation__title {
+  flex: 1;
+  text-align: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: #ffffff;
+}
+
+.navigation-form {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.form-search {
+  background-color: #f2f2f2;
+  border-radius: 16px;
+  border: 0;
+  outline: none;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  flex: 1;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: -0.24px;
+  color: #828282;
+}
+
+.navigation-form::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translate(0, -50%);
+  background-image: url(src/assets/img/icons/common-icons/magnifying-glass.svg);
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+}

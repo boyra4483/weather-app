@@ -1,0 +1,14 @@
+.empty-list {
+  text-align: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  color: #ffffff;
+}
+
+.location-table > ul > li:not(:last-child) {
+  margin-bottom: 16px;
+}
