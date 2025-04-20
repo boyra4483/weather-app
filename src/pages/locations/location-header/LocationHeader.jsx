@@ -1,5 +1,5 @@
 import { Form } from "react-router-dom";
-
+import { commonIndicators } from "../../../storage/storage";
 import { useNavigate } from "react-router-dom";
 import classes from "./LocationHeader.module.css";
 
@@ -14,10 +14,7 @@ export default function LocationHeader({ inputText, onInputTextChange }) {
             onClick={() => navigate(-1)}
             className={classes["navigation__icon"]}
           >
-            <img
-              src="src/assets/img/icons/common-icons/arrow-left.svg"
-              alt="arrow-left"
-            />
+            <img src={commonIndicators.arrowLeft} alt="arrow-left" />
           </div>
           <h1 className={classes["navigation__title"]}>Manage location</h1>
         </div>
