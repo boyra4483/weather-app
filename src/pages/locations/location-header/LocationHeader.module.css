@@ -53,7 +53,7 @@
   left: 16px;
   top: 50%;
   transform: translate(0, -50%);
-  background-image: url(src/assets/img/icons/common-icons/magnifying-glass.svg);
+  background-image: url(/src/assets/img/icons/common-icons/magnifying-glass.svg);
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
