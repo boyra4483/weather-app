@@ -14,7 +14,7 @@ import locationLoader from "./pages/locations/location-loader/locationLoader";
 const router = createBrowserRouter(
   [
     {
-      path: "/",
+      path: "/weather-app",
       element: <Weather />,
       loader: weatherLoader,
       errorElement: <NotFoundPage />,
