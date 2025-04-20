@@ -1,4 +1,4 @@
-const API_WEATHER = "1d874edece1009815b0e7de8c6faf375";
+const API_WEATHER = import.meta.env.VITE_API_KEY;
 
 const URL_WEATHER = `https://api.openweathermap.org/data/2.5/weather?&units=metric&appid=${API_WEATHER}`;
 const URL_GEOCODER = `http://api.openweathermap.org/geo/1.0/direct?limit=1&appid=${API_WEATHER}`;
