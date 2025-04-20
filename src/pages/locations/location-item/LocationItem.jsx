@@ -15,7 +15,7 @@ export default function LocationItem({
       <Link
         onClick={() => setCityName(cityName)}
         to={{
-          pathname: "/weather-app",
+          pathname: "/weather-app/",
           search: `title=${cityName}`,
         }}
         className={classes["weather-card"]}
