@@ -8,7 +8,7 @@ export default function WeatherHeader({ cityName }) {
   const listItems = getListItems(cityNames, cityName);
   return (
     <div className={classes["weather-header"]}>
-      <Link to="/locations" className={classes["cross"]}></Link>
+      <Link to="/weather-app/locations" className={classes["cross"]}></Link>
       <section className={classes["cities"]}>
         <div className={classes["cities__name"]}>{cityName}</div>
         <ul className={classes["navigation"]}>{listItems}</ul>
