@@ -20,7 +20,7 @@ const router = createBrowserRouter(
       errorElement: <NotFoundPage />,
     },
     {
-      path: "/locations",
+      path: "/weather-app/locations",
       element: <LocationPage />,
       loader: locationLoader,
     },
