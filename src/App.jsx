@@ -1,12 +1,14 @@
+localStorage.clear();
+
 import weatherLoader from "./assets/components/weather/weather-loader/weatherLoader";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import LocationPage from "./assets/pages/locations/LocationPage";
-
 import NotFoundPage from "./assets/not-found-page/NotFoundPage";
-import NoLocations from "./assets/components/weather/no-locations/NoLocations";
 
+import NoLocations from "./assets/components/weather/no-locations/NoLocations";
 import Weather from "./assets/components/weather/Weather";
+
 import locationLoader from "./assets/pages/locations/location-loader/locationLoader";
 
 const router = createBrowserRouter(
