@@ -1,0 +1,22 @@
+.gratitude {
+  text-align: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #ffffff;
+}
+
+.gratitude > a:link {
+  color: #ffb047;
+  text-decoration: none;
+}
+
+.gratitude > a:visited {
+  color: #00faff;
+}
+
+.gratitude > a:hover {
+  text-decoration: underline;
+}
