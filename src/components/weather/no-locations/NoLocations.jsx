@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Gratitude from "../../gratitude/Gratitude";
 import classes from "./NoLocations.module.css";
 
 export default function NoLocations() {
@@ -9,6 +10,7 @@ export default function NoLocations() {
       <p className={classes["no-locations__description"]}>
         to add a new location click the plus icon
       </p>
+      <Gratitude />
     </article>
   );
 }

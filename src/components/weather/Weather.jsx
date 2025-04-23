@@ -8,6 +8,8 @@ import NoLocations from "./no-locations/NoLocations";
 import WeatherContent from "../weather-сontent/WeatherContent";
 
 import WeatherDetail from "../weather-detail/WeatherDetail";
+import Gratitude from "../gratitude/Gratitude";
+
 import classes from "./Weather.module.css";
 
 export default function Weather() {
@@ -27,6 +29,7 @@ export default function Weather() {
         weatherForecast={weather}
       />
       <WeatherDetail weather={weather} />
+      <Gratitude />
     </section>
   );
 }

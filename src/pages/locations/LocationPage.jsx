@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Gratitude from "../../components/gratitude/Gratitude";
 
 import { useLoaderData } from "react-router-dom";
 import LocationTable from "./location-table/LocationTable";
@@ -20,6 +21,7 @@ export default function LocationPage() {
         onInputTextChange={handleInputTextChange}
       />
       <LocationTable cities={weatherData} inputText={inputText} />
+      <Gratitude />
     </div>
   );
 }
