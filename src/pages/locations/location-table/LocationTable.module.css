@@ -7,8 +7,13 @@
   line-height: 20px;
   letter-spacing: -0.24px;
   color: #ffffff;
+  margin-bottom: 35px;
 }
 
 .location-table > ul > li:not(:last-child) {
   margin-bottom: 16px;
+}
+
+.location-table > ul > :last-child {
+  margin-bottom: 35px;
 }
