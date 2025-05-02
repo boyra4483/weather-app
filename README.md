@@ -28,6 +28,7 @@ A single-page weather application built with React and `react-router-dom`, which
    npm install
 
 3. Run the development server:
+   ```
    npm run dev
 
-Open your browser at "http://localhost:5173" (or whichever port you're using).
+Open your browser at http://localhost:5173 (or whichever port you're using).
