@@ -23,11 +23,11 @@ A single-page weather application built with React and `react-router-dom`, which
    ```bash
    git clone https://github.com/your-username/weather-app.git
 
-Install dependencies
+2. Install dependencies
+   ```bash
    npm install
 
+3. Run the development server:
+   npm run dev
 
-Run the development server:
-npm run dev
-
-Open your browser at http://localhost:5173 (or whichever port you're using).
+Open your browser at "http://localhost:5173" (or whichever port you're using).
