@@ -7,14 +7,12 @@ import snowSvg from "/src/assets/img/icons/forecast-indicators/snow.svg";
 import thunderstormSvg from "/src/assets/img/icons/forecast-indicators/thunderstorm.svg";
 import temperatureSvg from "/src/assets/img/icons/forecast-indicators/temperature.svg";
 import waterSvg from "/src/assets/img/icons/forecast-indicators/water.svg";
-
 import bigClearSvg from "/src/assets/img/icons/big-forecast-indicators/clear.svg";
 import bigCloudsSvg from "/src/assets/img/icons/big-forecast-indicators/clouds.svg";
 import bigDrizzleSvg from "/src/assets/img/icons/big-forecast-indicators/drizzle.svg";
 import bigRainSvg from "/src/assets/img/icons/big-forecast-indicators/rain.svg";
 import bigSnowSvg from "/src/assets/img/icons/big-forecast-indicators/snow.svg";
 import bigThunderstormSvg from "/src/assets/img/icons/big-forecast-indicators/thunderstorm.svg";
-
 import arrowLeftSvg from "/src/assets/img/icons/common-icons/arrow-left.svg";
 import locationCurrentSvg from "/src/assets/img/icons/common-icons/location-current.svg";
 import magnifyingGlassSvg from "/src/assets/img/icons/common-icons/magnifying-glass.svg";
