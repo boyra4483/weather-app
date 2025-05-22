@@ -3,11 +3,19 @@ import { getLocalStorage, setLocalStorage } from "../../../storage/storage";
 
 export default async function loader({ request }) {
   if (!getUrlTitle(request.url)) return getLocalStorage();
-
   const title = getUrlTitle(request.url);
-  const weather = await getWeather(title);
+  let weather;
 
-  setLocalStorage(title, weather);
+  try {
+    weather = await getWeather(title);
+
+    if (weather.name.toLowerCase() !== title.toLocaleLowerCase())
+      throw new Error("not found");
+  } catch (error) {
+    return null;
+  }
+
+  setLocalStorage(weather.name, weather);
   return getLocalStorage();
 }
 
