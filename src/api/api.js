@@ -11,7 +11,7 @@ async function getWeather(urlWeather, urlGeocoder, name) {
     `${urlWeather}&lat=${coord[0].lat}&lon=${coord[0].lon}`
   );
 
-  return await weatherResponse.json();
+  return weatherResponse.json();
 }
 
 getWeather = getWeather.bind(null, URL_WEATHER, URL_GEOCODER);
