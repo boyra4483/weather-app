@@ -11,14 +11,15 @@ export default function LocationPage() {
   const [inputText, setInputText] = useState("");
   const weatherData = useLoaderData();
 
-  function handleInputTextChange(inputText) {
+  function handleInputChange(inputText) {
     setInputText(inputText);
   }
+
   return (
     <div className={classes["location"]}>
       <LocationHeader
         inputText={inputText}
-        onInputTextChange={handleInputTextChange}
+        onInputTextChange={handleInputChange}
       />
       <LocationTable cities={weatherData} inputText={inputText} />
       <Gratitude />
