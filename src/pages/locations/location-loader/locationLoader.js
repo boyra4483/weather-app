@@ -12,7 +12,7 @@ export default async function loader({ request }) {
     if (weather.name.toLowerCase() !== title.toLocaleLowerCase())
       throw new Error("not found");
   } catch (error) {
-    return null;
+    return getLocalStorage();
   }
 
   setLocalStorage(weather.name, weather);
